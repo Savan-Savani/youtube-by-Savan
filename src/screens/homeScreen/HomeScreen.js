@@ -9,7 +9,7 @@ const HomeScreen = () => {
       <CategoriesBar />
       <Row>
         {[...new Array(20)].map((i) => (
-          <Col lg={3} md={4}>
+          <Col lg={3} md={4} >
             <Video />
           </Col>
         ))}
