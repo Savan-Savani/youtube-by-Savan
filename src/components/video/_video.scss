@@ -11,17 +11,18 @@
 
   &__top {
     margin-bottom: 0.5rem;
+    position: relative;
 
     img {
       width: 100%;
     }
 
-    span {
+    &__duration {
       position: absolute;
 
       bottom: 0.3rem;
       right: 0.3rem;
-
+      width: 45px;
       padding: 0.2rem;
       background: #080808ec;
       border-radius: 3px;
@@ -30,8 +31,7 @@
   &__title {
     margin-bottom: 0.1rem;
     color: #fff;
-    @include line-clamp(1)
-    
+    @include line-clamp(1);
   }
   &__details {
     display: flex;
@@ -50,8 +50,8 @@
       margin-right: 0.5rem;
       cursor: pointer;
     }
-    p{
-        margin-bottom: 0;
+    p {
+      margin-bottom: 0;
     }
   }
 }

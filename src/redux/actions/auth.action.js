@@ -14,6 +14,7 @@ export const login = () => async (dispatch) => {
     });
 
     const provider = new firebase.auth.GoogleAuthProvider(); // google popup setup with firebase
+    provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl')  //youtube data api for comment and every other data
     const res = await auth.signInWithPopup(provider);
 
     const accessToken = res.credential.accessToken;
