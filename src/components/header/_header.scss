@@ -9,6 +9,9 @@
 
   height: 10vh;
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 
   &__menu {
     display: none;
@@ -75,14 +78,14 @@
     form {
       flex: 1;
     }
-    &__menu{
-        display: block;
+    &__menu {
+      display: block;
     }
-    &__logo{
-        display: none;
+    &__logo {
+      display: none;
     }
-    &__icons>*:not(img){
-        display: none;
+    &__icons > *:not(img) {
+      display: none;
     }
   }
 }

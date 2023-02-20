@@ -4,7 +4,7 @@ import {
   HOME_VIDEOS_SUCCESS,
 } from "../actionType";
 import request from "../../api";
-export const getPopularVideos = () => async (dispatch) => {
+export const getPopularVideos = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: HOME_VIDEOS_REQUEST,
@@ -15,7 +15,7 @@ export const getPopularVideos = () => async (dispatch) => {
         chart: "mostPopular",
         regionCode: "US",
         maxResults: 20,
-        pageToken: "",
+        pageToken: getState().homeVideosReducer.nextPageToken,
       },
     });
     dispatch({
@@ -23,7 +23,7 @@ export const getPopularVideos = () => async (dispatch) => {
       payload: {
         videos: data.items,
         nextPageToken: data.nextPageToken,
-        category:'All'
+        category: "All",
       },
     });
   } catch (error) {
@@ -34,7 +34,7 @@ export const getPopularVideos = () => async (dispatch) => {
     });
   }
 };
-export const getVideosCategory = (keyword) => async (dispatch,getState) => {
+export const getVideosCategory = (keyword) => async (dispatch, getState) => {
   try {
     dispatch({
       type: HOME_VIDEOS_REQUEST,
@@ -44,8 +44,8 @@ export const getVideosCategory = (keyword) => async (dispatch,getState) => {
         part: "snippet",
         maxResults: 20,
         pageToken: getState().homeVideosReducer.nextPageToken,
-        q:keyword,
-        type:'video'
+        q: keyword,
+        type: "video",
       },
     });
 
@@ -54,7 +54,7 @@ export const getVideosCategory = (keyword) => async (dispatch,getState) => {
       payload: {
         videos: data.items,
         nextPageToken: data.nextPageToken,
-        category:keyword
+        category: keyword,
       },
     });
   } catch (error) {
