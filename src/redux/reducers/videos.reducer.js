@@ -5,7 +5,12 @@ import {
 } from "../actionType";
 
 export const homeVideosReducer = (
-  state = { videos: [], loading: false, nextPageToken: null },
+  state = {
+    videos: [],
+    loading: false,
+    nextPageToken: null,
+    activeCategory: "All",
+  },
   action
 ) => {
   const { type, payload } = action;
@@ -16,7 +21,8 @@ export const homeVideosReducer = (
         ...state,
         videos: payload.videos,
         loading: false,
-        nextPageToken:payload.nextPageToken
+        nextPageToken: payload.nextPageToken,
+        activeCategory: payload.category,
       };
 
     case HOME_VIDEOS_FAIL:
