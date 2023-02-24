@@ -1,18 +1,41 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getPopularVideos, getVideosCategory } from "../../redux/actions/videos.action";
+import {
+  getPopularVideos,
+  getVideosByCategory,
+} from "../../redux/actions/videos.action";
 import "./_categoriesBar.scss";
 
-const keywords = ["All", "React", "Angular","React NAtive","Android Studio","Kotlin","Ios development",'Algoritham','Math','Coding','Dynamic programming'];
+const keywords = [
+  "All",
+  "React js",
+  "React Native",
+  "Firebase",
+  "Lazy-Loading",
+  "Node.js",
+  "MongoDB",
+  "use of API",
+  "Redux",
+  "Music",
+  "Algorithm Art ",
+  "Android Studio",
+  "Ios Development",
+  "F1",
+  "Vintage Card",
+  "Ocean Creatures",
+  "Tresure",
+];
+
 const CategoriesBar = () => {
-  const [activeElement, setActivateElement] = useState('All');
+  const [activeElement, setActiveElement] = useState("All");
+
   const dispatch = useDispatch();
   const handleClick = (value) => {
-    setActivateElement(value);
-    if(value ==='All'){
-      dispatch(getPopularVideos)
-    }else{
-      dispatch(getVideosCategory(value));
+    setActiveElement(value);
+    if (value === "All") {
+      dispatch(getPopularVideos());
+    } else {
+      dispatch(getVideosByCategory(value));
     }
   };
 
@@ -20,8 +43,8 @@ const CategoriesBar = () => {
     <div className="categoriesBar">
       {keywords.map((value, i) => (
         <span
-          key={i}
           onClick={() => handleClick(value)}
+          key={i}
           className={activeElement === value ? "active" : ""}
         >
           {value}

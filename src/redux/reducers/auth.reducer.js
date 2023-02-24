@@ -6,7 +6,7 @@ import {
   LOG_OUT,
 } from "../actionType";
 
-const intialState = {
+const initialState = {
   accessToken: sessionStorage.getItem("ytc-access-token")
     ? sessionStorage.getItem("ytc-access-token")
     : null,
@@ -16,7 +16,7 @@ const intialState = {
   loading: false,
 };
 
-export const authReducer = (prevState = intialState, action) => {
+export const authReducer = (prevState = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -32,31 +32,25 @@ export const authReducer = (prevState = intialState, action) => {
         accessToken: payload,
         loading: false,
       };
-
-    case LOGIN_FAIL: {
+    case LOGIN_FAIL:
       return {
         ...prevState,
         accessToken: null,
         loading: false,
         error: payload,
       };
-    }
-
-    case LOAD_PROFILE: {
+    case LOAD_PROFILE:
       return {
         ...prevState,
         user: payload,
       };
-    }
 
-    case LOG_OUT: {
+    case LOG_OUT:
       return {
         ...prevState,
         accessToken: null,
         user: null,
       };
-    }
-
     default:
       return prevState;
   }

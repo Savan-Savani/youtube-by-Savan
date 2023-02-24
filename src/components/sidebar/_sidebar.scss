@@ -1,9 +1,11 @@
-@import "../../base.scss";
+@import "../../_base.scss";
 
 .sidebar {
   background: $black-secondary;
+
   display: flex;
   flex-direction: column;
+
   width: 250px;
   height: 90vh;
   padding-top: 2rem;
@@ -11,7 +13,15 @@
 
   position: sticky;
   top: 10vh;
-  left: 0;;
+  left: 0;
+
+  a {
+    color: $text-color;
+    &:hover {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
 
   li {
     display: flex;
@@ -27,13 +37,16 @@
       font-weight: 500;
       letter-spacing: 0.4px;
     }
+
     &:hover {
       background-color: $border-color;
     }
   }
+
   hr {
     background-color: $border-color;
   }
+
   &.open {
     transform: translateX(0);
   }
@@ -53,6 +66,7 @@
 @media (max-width: $breakpoint-small) {
   .sidebar {
     transform: translateX(-100%);
+
     position: fixed;
     z-index: 999;
   }

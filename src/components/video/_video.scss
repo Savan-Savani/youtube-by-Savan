@@ -1,4 +1,4 @@
-@import "../../base";
+@import "../../base.scss";
 
 .video {
   margin-bottom: 1rem;
@@ -12,11 +12,12 @@
   &__top {
     margin-bottom: 0.5rem;
     position: relative;
-
+    .lazy-load-image-background {
+      width: 100%;
+    }
     img {
       width: 100%;
     }
-
     &__duration {
       position: absolute;
 
@@ -28,11 +29,14 @@
       border-radius: 3px;
     }
   }
+
   &__title {
     margin-bottom: 0.1rem;
+
     color: #fff;
     @include line-clamp(1);
   }
+
   &__details {
     display: flex;
     align-items: center;

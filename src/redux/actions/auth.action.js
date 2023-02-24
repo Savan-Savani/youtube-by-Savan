@@ -1,4 +1,5 @@
 import firebase from "firebase/compat/app";
+
 import auth from "../../firebase";
 import {
   LOAD_PROFILE,
@@ -7,17 +8,19 @@ import {
   LOGIN_SUCCESS,
   LOG_OUT,
 } from "../actionType";
+
 export const login = () => async (dispatch) => {
   try {
     dispatch({
       type: LOGIN_REQUEST,
     });
 
-    const provider = new firebase.auth.GoogleAuthProvider(); // google popup setup with firebase
-    provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl')  //youtube data api for comment and every other data
-    const res = await auth.signInWithPopup(provider);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope("https://www.googleapis.com/auth/youtube.force-ssl");
 
+    const res = await auth.signInWithPopup(provider);
     const accessToken = res.credential.accessToken;
+
     const profile = {
       name: res.additionalUserInfo.profile.name,
       photoURL: res.additionalUserInfo.profile.picture,
@@ -43,11 +46,12 @@ export const login = () => async (dispatch) => {
   }
 };
 
-export const logout = () => async (dispatch) => {
+export const log_out = () => async (dispatch) => {
   await auth.signOut();
   dispatch({
     type: LOG_OUT,
   });
+
   sessionStorage.removeItem("ytc-access-token");
   sessionStorage.removeItem("ytc-user");
 };

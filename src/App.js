@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
+
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
-import LoginScreen from "./screens/LoginScreen.js/LoginScreen";
+import LoginScreen from "./screens/loginScreen/LoginScreen";
 
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
 import "./_app.scss";
 import { useSelector } from "react-redux";
+import WatchScreen from "./screens/watchScreen/WatchScreen";
+import SearchScreen from "./screens/SearchScreen";
+import SubscriptionsScreen from "./screens/subscriptionsScreen/SubscriptionsScreen";
+import ChannelScreen from "./screens/channelScreen/ChannelScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
 
-  const handleToggleSidebar = () => {
-    toggleSidebar((value) => !value);
-  };
+  const handleToggleSidebar = () => toggleSidebar((value) => !value);
+
   return (
     <>
       <Header handleToggleSidebar={handleToggleSidebar} />
-      <div className="app__container ">
+      <div className="app__container">
         <Sidebar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
-        <Container className="app__main " fluid>
+        <Container fluid className="app__main ">
           {children}
         </Container>
       </div>
@@ -50,15 +54,43 @@ const App = () => {
           </Layout>
         }
       />
+
       <Route path="/auth" element={<LoginScreen />} />
+
       <Route
-        path="/search"
+        path="/search/:query"
         element={
           <Layout>
-            <h1>search results</h1>
+            <SearchScreen />
           </Layout>
         }
       />
+      <Route
+        path="/watch/:id"
+        element={
+          <Layout>
+            <WatchScreen />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/feed/subscriptions"
+        element={
+          <Layout>
+            <SubscriptionsScreen />
+          </Layout>
+        }
+      />
+      <Route
+        path="/channel/:channelId"
+        element={
+          <Layout>
+            <ChannelScreen />
+          </Layout>
+        }
+      />
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
