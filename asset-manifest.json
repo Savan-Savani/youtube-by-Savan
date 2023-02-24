@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/youtube-by-Savan/static/css/main.66887c80.css",
+    "main.js": "/youtube-by-Savan/static/js/main.c4943840.js",
+    "index.html": "/youtube-by-Savan/index.html",
+    "main.66887c80.css.map": "/youtube-by-Savan/static/css/main.66887c80.css.map",
+    "main.c4943840.js.map": "/youtube-by-Savan/static/js/main.c4943840.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66887c80.css",
+    "static/js/main.c4943840.js"
+  ]
+}
