@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { BrowserRouter as Router } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import "./_base.scss";
 import store from "./redux/store";
@@ -13,9 +14,14 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>
+  <div>
+    <Helmet>
+      <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+    </Helmet>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </div>
 );
