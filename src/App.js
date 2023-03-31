@@ -40,14 +40,14 @@ const App = () => {
 
   useEffect(() => {
     if (!loading && !accessToken) {
-      navigate("/auth");
+      navigate("/youtube-by-Savan/auth");
     }
   }, [accessToken, loading, navigate]);
 
   return (
     <Routes>
       <Route
-        path="/"
+        path="/youtube-by-Savan/"
         element={
           <Layout>
             <HomeScreen />
@@ -55,10 +55,10 @@ const App = () => {
         }
       />
 
-      <Route path="/auth" element={<LoginScreen />} />
+      <Route path="/youtube-by-Savan/auth" element={<LoginScreen />} />
 
       <Route
-        path="/search/:query"
+        path="/youtube-by-Savan/search/:query"
         element={
           <Layout>
             <SearchScreen />
@@ -66,7 +66,7 @@ const App = () => {
         }
       />
       <Route
-        path="/watch/:id"
+        path="/youtube-by-Savan/watch/:id"
         element={
           <Layout>
             <WatchScreen />
@@ -75,7 +75,7 @@ const App = () => {
       />
 
       <Route
-        path="/feed/subscriptions"
+        path="/youtube-by-Savan/feed/subscriptions"
         element={
           <Layout>
             <SubscriptionsScreen />
@@ -83,7 +83,7 @@ const App = () => {
         }
       />
       <Route
-        path="/channel/:channelId"
+        path="/youtube-by-Savan/channel/:channelId"
         element={
           <Layout>
             <ChannelScreen />
@@ -91,7 +91,7 @@ const App = () => {
         }
       />
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Navigate to="/youtube-by-Savan/" replace />} />
     </Routes>
   );
 };

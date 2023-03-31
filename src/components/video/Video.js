@@ -64,7 +64,7 @@ const Video = ({ video, channelScreen }) => {
   }, [channelId]);
 
   const handleVideoClick = () => {
-    navigate(`/watch/${_videoId}`);
+    navigate(`/youtube-by-Savan/watch/${_videoId}`);
   };
 
   return (
