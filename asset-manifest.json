@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/youtube-by-Savan/static/css/main.66887c80.css",
-    "main.js": "/youtube-by-Savan/static/js/main.f3f58dfe.js",
+    "main.js": "/youtube-by-Savan/static/js/main.5856644e.js",
     "index.html": "/youtube-by-Savan/index.html",
     "main.66887c80.css.map": "/youtube-by-Savan/static/css/main.66887c80.css.map",
-    "main.f3f58dfe.js.map": "/youtube-by-Savan/static/js/main.f3f58dfe.js.map"
+    "main.5856644e.js.map": "/youtube-by-Savan/static/js/main.5856644e.js.map"
   },
   "entrypoints": [
     "static/css/main.66887c80.css",
-    "static/js/main.f3f58dfe.js"
+    "static/js/main.5856644e.js"
   ]
 }
