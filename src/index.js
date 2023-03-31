@@ -16,7 +16,10 @@ const root = createRoot(container);
 root.render(
   <div>
     <Helmet>
-      <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+      <meta
+        name="google-site-verification"
+        content="YKCJ7R1TzohJNu5er1VY0HqotmCCXiRXvzfxDdTsBlQ"
+      />
     </Helmet>
     <Provider store={store}>
       <Router>
