@@ -1,7 +1,7 @@
 {
   "name": "yt-clone",
   "version": "0.1.0",
-  "homepage": "https://savan-savani.github.io/youtube-by-Savan/",
+  "homepage": "https://yt-clone-by-savan.web.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
