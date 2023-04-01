@@ -15,7 +15,7 @@ const Header = ({ handleToggleSidebar }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    navigate(`/youtube-by-Savan/search/${input}`);
+    navigate(`/search/${input}`);
   };
   const user = useSelector((state) => state.auth?.user);
 

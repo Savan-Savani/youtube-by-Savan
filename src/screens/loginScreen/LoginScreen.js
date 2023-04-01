@@ -18,7 +18,7 @@ const LoginScreen = () => {
 
   useEffect(() => {
     if (accessToken) {
-      navigate("/youtube-by-Savan/");
+      navigate("/");
     }
   }, [accessToken, navigate]);
 

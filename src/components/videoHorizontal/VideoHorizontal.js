@@ -69,8 +69,8 @@ const VideoHorizontal = ({ video, searchScreen, subScreen }) => {
 
   const handleClick = () => {
     isVideo
-      ? navigate(`/youtube-by-Savan/watch/${id.videoId}`)
-      : navigate(`/youtube-by-Savan/channel/${_channelId}`);
+      ? navigate(`/watch/${id.videoId}`)
+      : navigate(`/channel/${_channelId}`);
   };
 
   const thumbnail = !isVideo && "videoHorizontal__thumbnail-channel";
